@@ -8,19 +8,17 @@ Página estática que enlaza los tres demos funcionales de Pablo Cariaga:
 
 Sin backend, sin dependencias de build: es HTML + CSS plano, listo para GitHub Pages.
 
-## Antes de publicar (importante)
+## Capturas (reales)
 
-Los enlaces usan el placeholder `TU-USUARIO`. Reemplazalo por tu usuario real de
-GitHub antes de pushear:
+Sitio publicado en GitHub Pages: https://esvindal.github.io/portafolio/
 
-```powershell
-# en esta carpeta
-(Get-Content index.html) -replace 'TU-USUARIO', '<tu-usuario>' | Set-Content index.html
-```
+![Página en escritorio](capturas/portafolio-1440.png)
+<img src="capturas/portafolio-390.png" width="320" alt="Página en móvil">
 
-Los enlaces a los "sitios del demo" (`TU-USUARIO.github.io/...`) solo funcionan
-una vez que cada repo esté publicado y con GitHub Pages activado (carpeta `docs/`
-o raíz según corresponda).
+## Estado de publicación
+
+Ya publicado bajo el usuario `Esvindal`. Los enlaces de `index.html` apuntan a
+los repos y sitios reales.
 
 ## Qué es real y qué es simulado
 
