@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pablo Cariaga — Demos funcionales</title>
+  <meta name="description"
+        content="Tres demos de código abierto: cámara a Telegram, seguimiento de precios y analizador de accesos. Hechos para mostrar trabajo real, no casos de clientes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%231c1b18'/%3E%3Ctext x='8' y='12' font-size='11' font-family='Georgia' text-anchor='middle' fill='%23faf8f4'%3EPC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera-interna">
+      <p class="cabecera-nombre">Pablo Cariaga</p>
+      <p class="cabecera-nota">demos funcionales · código abierto</p>
+    </div>
+  </header>
+
+  <main id="contenido" class="contenedor">
+
+    <section class="intro">
+      <h1>Demos que funcionan,<br>no maquetas.</h1>
+      <p class="intro-texto">
+        Cada enlace lleva a un repositorio público con el código completo, pruebas
+        y un README que dice exactamente <strong>qué es real y qué es simulado</strong>.
+        Son proyectos propios hechos para mostrar cómo trabajo: no son
+        sistemas de clientes ni trabajos encargados.
+      </p>
+    </section>
+
+    <section aria-labelledby="titulo-demos">
+      <h2 id="titulo-demos" class="visually-hidden">Demos</h2>
+
+      <article class="demo">
+        <div class="demo-cabeza">
+          <h3>Cámara → Telegram</h3>
+          <p class="demo-tag">Python · Digest auth · multipart streams</p>
+        </div>
+        <p class="demo-que">
+          Escucha el flujo de eventos de una cámara o NVR (Dahua / Hikvision),
+          toma la foto del momento y la manda a un chat de Telegram en segundos.
+          Registra cada evento en SQLite y exporta a CSV.
+        </p>
+        <div class="demo-real">
+          <h4>Qué es real</h4>
+          <ul>
+            <li>El pipeline completo: evento → foto → <code>sendPhoto</code> → registro.</li>
+            <li>Los parsers de los protocolos HTTP de Dahua e Hikvision, verificados contra documentación pública.</li>
+            <li>Un simulador que genera eventos y fotos para probar todo sin cámara.</li>
+            <li>37 pruebas automáticas que corren sin red.</li>
+          </ul>
+          <p class="demo-cierre">
+            Probado con el simulador; la conexión a la cámara real está
+            <em>a verificar en dispositivo</em> (hay un guion de grabación en el repo).
+          </p>
+        </div>
+        <p class="demo-enlaces">
+          <a class="enlace-repo" href="https://github.com/TU-USUARIO/camara-a-telegram">Repositorio</a>
+          <a class="enlace-sitio" href="https://TU-USUARIO.github.io/camara-a-telegram/">Sitio del demo</a>
+        </p>
+      </article>
+
+      <article class="demo">
+        <div class="demo-cabeza">
+          <h3>Seguimiento de precios</h3>
+          <p class="demo-tag">Python · GitHub Actions · GitHub Pages</p>
+        </div>
+        <p class="demo-que">
+          Un scraper que corre solo cada 6 horas (GitHub Actions), guarda el
+          historial de precios y hace commit solo si algo cambió. Una página
+          muestra la evolución, una tabla comparativa y alertas de bajada.
+        </p>
+        <div class="demo-real">
+          <h4>Qué es real</h4>
+          <ul>
+            <li>Los datos: 60 productos descargados de verdad de
+              <em>books.toscrape.com</em>, un sitio creado para practicar scraping.</li>
+            <li>El historial idempotente y las reglas de alerta, con 14 pruebas.</li>
+            <li>El workflow programado con commit condicional.</li>
+          </ul>
+          <p class="demo-cierre">
+            La fuente es de práctica y sus precios son estables; el gráfico
+            será plano hasta que el sitio cambie precios. El workflow se
+            activa al publicar el repo en GitHub.
+          </p>
+        </div>
+        <p class="demo-enlaces">
+          <a class="enlace-repo" href="https://github.com/TU-USUARIO/seguimiento-de-precios">Repositorio</a>
+          <a class="enlace-sitio" href="https://TU-USUARIO.github.io/seguimiento-de-precios/">Sitio del demo</a>
+        </p>
+      </article>
+
+      <article class="demo">
+        <div class="demo-cabeza">
+          <h3>Analizador de accesos</h3>
+          <p class="demo-tag">HTML/CSS/JS · 100% en el navegador</p>
+        </div>
+        <p class="demo-que">
+          Subís un CSV de eventos de acceso y ves horas pico, rechazos
+          repetidos y anomalías, con un informe descargable. Nada se sube a
+          ningún servidor: todo se procesa en tu propia máquina.
+        </p>
+        <div class="demo-real">
+          <h4>Qué es real</h4>
+          <ul>
+            <li>El análisis completo corre en JavaScript del lado del cliente.</li>
+            <li>5 pruebas de punta a punta con Playwright sobre Chrome real.</li>
+            <li>Un generador de datos de ejemplo (marcados como generados) para probarla sin CSV propio.</li>
+          </ul>
+          <p class="demo-cierre">
+            Funciona hoy mismo: abrí la página y probala con los datos de ejemplo.
+          </p>
+        </div>
+        <p class="demo-enlaces">
+          <a class="enlace-repo" href="https://github.com/TU-USUARIO/analizador-de-accesos">Repositorio</a>
+          <a class="enlace-sitio" href="https://TU-USUARIO.github.io/analizador-de-accesos/">Probar en vivo</a>
+        </p>
+      </article>
+    </section>
+
+    <section class="sobre" aria-labelledby="titulo-sobre">
+      <h2 id="titulo-sobre">Sobre mí</h2>
+      <p>
+        Trabajo hace <strong>15 años en seguridad de barrios privados y medios
+        digitales</strong>. Fundé <strong>Axessar</strong>, enfocada en barrios
+        privados y accesos vehiculares. Hice la ruta
+        <strong>“Data Scientist con Python”</strong> de Platzi.
+      </p>
+      <p>
+        Construyo automatizaciones en Python: integración de cámaras y control
+        de accesos, scraping respetuoso, procesamiento de datos y herramientas
+        web sin backend cuando el problema lo permite.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <p>
+        Los tres demos son de código abierto (licencia MIT). Los enlaces a los
+        sitios en vivo funcionan una vez publicados en GitHub Pages.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
